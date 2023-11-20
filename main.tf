@@ -50,7 +50,7 @@ resource "aws_rds_cluster_instance" "cluster_instance" {
   count              = 1
   identifier         = "${var.env}-${var.component}-instance-${count.index}"
   cluster_identifier = aws_rds_cluster.rds_cluster.id
-  instance_class     = var.instance_class
+  instance_class     = var.rds_instance_class
   engine             = aws_rds_cluster.rds_cluster.engine
   engine_version     = aws_rds_cluster.rds_cluster.engine_version
 }
